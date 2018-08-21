@@ -1,6 +1,5 @@
 package guru.springframework.controllers;
 
-import guru.springframework.services.ConstructerGreetingService;
 import guru.springframework.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,7 +11,7 @@ public class ConstructorInjectedController {
     private GreetingService greetingService;
 
     @Autowired          //Optional
-    public ConstructorInjectedController(@Qualifier("constructerGreetingService") GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
