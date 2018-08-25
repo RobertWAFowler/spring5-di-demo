@@ -1,13 +1,12 @@
 package guru.springframework.controllers;
 
-import guru.services.GreetingService;
+import guru.springframework.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 
 @Controller
-@ComponentScan(basePackages = {"guru.services", "guru.springframework"})
+//@ComponentScan(basePackages = {"guru.service", "guru.springframework"})
 public class SetterInjectedController {
 
     private GreetingService greetingService;
@@ -18,6 +17,7 @@ public class SetterInjectedController {
 
     @Autowired
     public void setGreetingService(@Qualifier("setterGreetingService") GreetingService greetingService) {
+
         this.greetingService = greetingService;
     }
 }

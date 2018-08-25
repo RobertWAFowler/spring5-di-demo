@@ -1,6 +1,6 @@
 package guru.springframework.controllers;
 
-import guru.services.GreetingServiceImpl;
+import guru.springframework.service.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
