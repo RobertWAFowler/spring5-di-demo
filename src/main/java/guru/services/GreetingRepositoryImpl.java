@@ -1,7 +1,6 @@
-package guru.springframework.services;
+package guru.services;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 /**
  * Created by jt on 5/24/17.
