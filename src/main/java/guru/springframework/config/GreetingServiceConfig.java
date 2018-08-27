@@ -1,6 +1,7 @@
 package guru.springframework.config;
 
 import guru.springframework.service.GreetingRepository;
+import guru.springframework.service.GreetingRepositoryImpl;
 import guru.springframework.service.GreetingService;
 import guru.springframework.service.GreetingServiceFactory;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +13,13 @@ import org.springframework.context.annotation.Profile;
 public class GreetingServiceConfig {
 
     @Bean
-    GreetingServiceFactory greetingServiceFactory(GreetingRepository repository) {
-        return new GreetingServiceFactory(repository);
+    GreetingRepository greetingRepository() {
+        return new GreetingRepositoryImpl();
+    }
+
+    @Bean
+    GreetingServiceFactory greetingServiceFactory(GreetingRepository greetingRepository) {
+        return new GreetingServiceFactory(greetingRepository);
     }
 
     @Bean
